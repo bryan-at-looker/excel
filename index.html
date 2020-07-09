@@ -4,10 +4,10 @@
     const queryString = window.location.search;
     console.log(queryString);
     //const urlParams = new URLSearchParams(queryString);
-    var codeString = $.urlParam('code');
+    var codeString = urlParam('code');
     console.log(codeString);
     
-    $.urlParam = function(name){
+    urlParam = function(name){
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results == null){
            return null;
