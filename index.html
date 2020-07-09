@@ -13,7 +13,7 @@
         }
       }
       copyText = function(){
-          var copyText = document.getElementById("myInput");
+          var copyText = document.getElementById("codeString");
           /* Select the text field */
           copyText.select();
           /* Copy the text inside the text field */
@@ -29,4 +29,4 @@
 
 <h1>hello world </h1>
 <button onclick="copyText()" height="50px" width="100px">Copy To Clipboard</button>
-<textarea id="codeString" height="50px" width="200px"></textarea>
+<textarea id="codeString" height="50px" width="200px overflow="hidden"></textarea>
