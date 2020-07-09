@@ -3,21 +3,30 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>  
     $(document).ready(function(){
-        urlParam = function(name){
-            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-            if (results == null){
-               return null;
-            }
-            else {
-               return decodeURI(results[1]) || 0;
-            }
+      urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results == null){
+           return null;
         }
-        var codeString = urlParam('code');
-        document.getElementById("codeString").innerHTML = codeString
+        else {
+           return decodeURI(results[1]) || 0;
+        }
+      }
+      copyText = function(){
+          var copyText = document.getElementById("myInput");
+          /* Select the text field */
+          copyText.select();
+          /* Copy the text inside the text field */
+          document.execCommand("copy");
+      }
+
+      var codeString = urlParam('code');
+      document.getElementById("codeString").innerHTML = codeString
     });
      
   </script>
 </header>
 
 <h1>hello world </h1>
-<div id="codeString"></div>
+<button onclick="copyText()" height="50px" width="100px">Copy To Clipboard</button>
+<textarea id="codeString" height="50px" width="200px"></textarea>
