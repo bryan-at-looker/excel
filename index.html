@@ -1,5 +1,8 @@
 <header>
   <script>
+    import 'core-js/features/url-search-params';
+    
+    
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
