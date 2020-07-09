@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>  
      urlParam = function(name){
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -10,17 +11,10 @@
            return decodeURI(results[1]) || 0;
         }
     }
-    
-    //const queryString = window.location.search;
-    //console.log(queryString);
-    //const urlParams = new URLSearchParams(queryString);
     var codeString = urlParam('code');
-    console.log(codeString);
-    
-
-    
+    document.getElementById(id).innerHTML = codeString
   </script>
 </header>
 
 <h1>hello world </h1>
-<a id="codeString"></a>
+<div id="codeString"></div>
