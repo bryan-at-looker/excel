@@ -2,17 +2,20 @@
 <header>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>  
-     urlParam = function(name){
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-        if (results == null){
-           return null;
+    $(document).ready(function(){
+        urlParam = function(name){
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            if (results == null){
+               return null;
+            }
+            else {
+               return decodeURI(results[1]) || 0;
+            }
         }
-        else {
-           return decodeURI(results[1]) || 0;
-        }
-    }
-    var codeString = urlParam('code');
-    document.getElementById("codeString").innerHTML = codeString
+        var codeString = urlParam('code');
+        document.getElementById("codeString").innerHTML = codeString
+    });
+     
   </script>
 </header>
 
